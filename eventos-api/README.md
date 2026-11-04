@@ -1,8 +1,8 @@
-# 🎟️ API de Gestão de Eventos
+#  API de Gestão de Eventos
 
 API REST desenvolvida com **Spring Boot** para gerenciar **eventos**, **participantes** e **inscrições**, aplicando organização em camadas, DTOs, validações, tratamento centralizado de erros, filtros, paginação, regras de negócio e documentação com Swagger.
 
-## 📌 Descrição e objetivo
+## Descrição e objetivo
 
 O sistema permite cadastrar eventos (palestras, workshops, shows etc.), cadastrar participantes e inscrevê-los nos eventos, controlando vagas, duplicidade, status do evento e calculando automaticamente o valor do ingresso (estudantes pagam 50%).
 
@@ -18,7 +18,7 @@ Evento (1) ────< (N) Inscricao (N) >──── (1) Participante
 
 Relacionamentos mapeados com `@OneToMany` / `@ManyToOne`.
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 - Java 17
 - Spring Boot 3.5 (Web, Data JPA, Validation)
@@ -27,7 +27,7 @@ Relacionamentos mapeados com `@OneToMany` / `@ManyToOne`.
 - Lombok
 - Maven
 
-## 🧱 Organização em camadas
+## Organização em camadas
 
 ```
 br.com.eventos
@@ -41,7 +41,7 @@ br.com.eventos
 └── config       # Configuração do OpenAPI
 ```
 
-## ⚙️ Como configurar e executar
+## Como configurar e executar
 
 ### Pré-requisitos
 - JDK 17+
@@ -76,11 +76,11 @@ A API sobe em `http://localhost:8080`.
 
 ## 📖 Documentação Swagger
 
-👉 **http://localhost:8080/swagger-ui.html**
+ **http://localhost:8080/swagger-ui.html**
 
 JSON OpenAPI: http://localhost:8080/v3/api-docs
 
-## 🔗 Endpoints
+##  Endpoints
 
 | Método | Rota | Descrição | Status |
 |---|---|---|---|
@@ -108,7 +108,7 @@ JSON OpenAPI: http://localhost:8080/v3/api-docs
 **Participantes** (`GET /participantes`): `nome`, `email`, `estudante`.
 **Inscrições** (`GET /inscricoes`): `eventoId`, `participanteId`, `status`.
 
-## 🧪 Exemplos de uso
+##  Exemplos de uso
 
 **Criar evento**
 ```bash
@@ -153,7 +153,7 @@ curl "http://localhost:8080/eventos?categoria=WORKSHOP&precoMax=100&dataDe=2027-
 }
 ```
 
-## 📏 Regras de negócio implementadas
+##  Regras de negócio implementadas
 
 1. Não permitir evento duplicado (mesmo nome e data/hora de início) → 409
 2. Data de início deve ser futura e data de fim não pode ser anterior ao início → 409
@@ -168,10 +168,8 @@ curl "http://localhost:8080/eventos?categoria=WORKSHOP&precoMax=100&dataDe=2027-
 11. E-mail de participante deve ser único → 409
 12. Só é possível excluir inscrições já canceladas → 409
 
-## ✅ Tratamento de erros
+##  Tratamento de erros
 
 `@RestControllerAdvice` (`GlobalExceptionHandler`) padroniza as respostas: `400` (validação/JSON/parâmetro inválido), `404` (não encontrado), `409` (regra de negócio/integridade), `405`, `500`.
 
-## 👥 Equipe
-
-> Preencher com os nomes dos integrantes.
+## Aluno: CARLOS ARTHUR MORAES GONÇALVES
