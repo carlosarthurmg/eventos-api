@@ -172,4 +172,11 @@ curl "http://localhost:8080/eventos?categoria=WORKSHOP&precoMax=100&dataDe=2027-
 
 `@RestControllerAdvice` (`GlobalExceptionHandler`) padroniza as respostas: `400` (validação/JSON/parâmetro inválido), `404` (não encontrado), `409` (regra de negócio/integridade), `405`, `500`.
 
-## Aluno: CARLOS ARTHUR MORAES GONÇALVES
+
+## Vídeo de demonstração
+
+https://youtu.be/83GCGPCs_zo
+
+## Autor
+
+Carlos Arthur Moraes Gonçalves
